@@ -7,6 +7,7 @@ import { createEmotionCache } from '@/utils'
 import createEmotionServer from '@emotion/server/create-instance'
 import { AppContextType, AppPropsType } from 'next/dist/shared/lib/utils'
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+import { Helmet } from 'react-helmet'
 
 interface DocumentProps {
   emotionStylesTags: any[]
@@ -37,6 +38,21 @@ class MyDocument extends Document<DocumentProps> {
           />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStylesTags}
+          <Helmet>
+            {/* <!-- Hotjar Tracking Code for https://main--bespoke-madeleine-cd5e39.netlify.app/ --> */}
+            <script>
+              {`
+                (function(h,o,t,j,a,r){
+                  h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                  h._hjSettings={hjid:3619763,hjsv:6};
+                  a=o.getElementsByTagName('head')[0];
+                  r=o.createElement('script');r.async=1;
+                  r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                  a.appendChild(r);
+              })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+              `}
+            </script>
+          </Helmet>
         </Head>
         <body>
           <Main />

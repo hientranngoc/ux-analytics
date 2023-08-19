@@ -8,6 +8,13 @@ import createEmotionServer from '@emotion/server/create-instance'
 import { AppContextType, AppPropsType } from 'next/dist/shared/lib/utils'
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 
+import Hotjar from '@hotjar/browser'
+
+const siteId = 3619763
+const hotjarVersion = 6
+
+Hotjar.init(siteId, hotjarVersion)
+
 interface DocumentProps {
   emotionStylesTags: any[]
 }

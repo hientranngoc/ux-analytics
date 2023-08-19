@@ -10,6 +10,12 @@ import 'slick-carousel/slick/slick.css'
 import '@/styles/globals.css'
 import '@/styles/react-slick.css'
 import { NextPageWithLayout } from '@/interfaces/layout'
+import Hotjar from '@hotjar/browser'
+
+const siteId = 3619763
+const hotjarVersion = 6
+
+Hotjar.init(siteId, hotjarVersion)
 // import 'slick-carousel/slick/slick-theme.css'
 
 // Client-side cache, shared for the whole session of the user in the browser.

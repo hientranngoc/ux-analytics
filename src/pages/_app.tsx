@@ -38,7 +38,7 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
         <CssBaseline />
         {getLayout(<Component {...pageProps} />)}
       </MUIProvider>
-      <HotjarScript />
+      {/* <HotjarScript /> */}
     </CacheProvider>
   )
 }

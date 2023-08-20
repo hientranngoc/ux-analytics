@@ -38,6 +38,18 @@ class MyDocument extends Document<DocumentProps> {
           />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStylesTags}
+          {/* <!-- Google tag (gtag.js) --> */}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZE5YXYQ89"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-3ZE5YXYQ89');
+              `,
+            }}
+          />
         </Head>
         <body>
           <Main />
